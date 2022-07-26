@@ -1,6 +1,7 @@
 import src from './assets/22.png'
 import src2 from './assets/car.svg'
 import testTxt from './assets/test.txt'
+import jpg from './assets/11.jpg'
 
 //
 const getName = () => {
@@ -27,3 +28,10 @@ const block = document.createElement('div')
 block.style.cssText = 'width: 200px; height: 200px; background: #eee;'
 block.textContent = testTxt
 document.body.appendChild(block)
+
+// 设置通用资源类型asset，
+const jpgTest = document.createElement('img')
+jpgTest.style.cssText = 'width: 160px; height: 100px;'
+jpgTest.src = jpg
+
+document.body.appendChild(jpgTest)

@@ -44,7 +44,23 @@ module.exports = {
         {
           test: /\.txt$/,
           type: 'asset/source',  // 用于导出资源的源代码
-      }
+        },
+        {
+          // 监听资源文件
+          test: /\.jpg$/i,
+          // 设置通用资源类型asset，在导出一个data url 和发送一个单独的文件之间自动选择
+          type: 'asset', 
+          // 小于设置的大小则转为 64 位图，否则转 URL
+          parser: {
+            dataUrlCondition: {
+              maxSize: 4 * 1024 // 4kb
+            }
+          },
+          generator: {
+            // 生成资源名称
+            filename: 'images/[name][ext]'
+          }
+        }
     ]
   }
 
