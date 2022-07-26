@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 
 module.exports = {
   entry: './src/index.js', // 配置入口
@@ -12,7 +13,7 @@ module.exports = {
     assetModuleFilename: 'images/[contenthash][ext]' // 'images/test.png' // 打包图片到该文件夹中
   },
 
-  mode: 'development', // 开发环境
+  mode: 'production', // 生产环境
 
   devtool: 'inline-source-map', // 利于精准定位错误位置
 
@@ -77,6 +78,13 @@ module.exports = {
           ]
         }
     ]
-  }
+  },
+
+  optimization: {
+    minimizer: [
+      // 使用插件优化 css 代码
+      new CssMinimizerPlugin()
+    ],
+  },
 
 };
