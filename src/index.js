@@ -28,6 +28,7 @@ document.body.appendChild(img2)
 // 导入文本文件
 const block = document.createElement('div')
 block.style.cssText = 'width: 200px; height: 200px; background: #eee;'
+block.classList.add('block-bg')
 block.textContent = testTxt
 document.body.appendChild(block)
 
