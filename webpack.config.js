@@ -22,4 +22,9 @@ module.exports = {
     }) // 这将会生成一个包含以下内容的 dist/index.html 文件
   ], 
 
+  // 安装webpack-dev-server,运行npx webpack-dev-server， 代码修改时时更新页面 
+  devServer: {
+    static: './dist'
+  },
+
 };
