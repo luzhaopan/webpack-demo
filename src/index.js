@@ -2,6 +2,7 @@ import src from './assets/22.png'
 import src2 from './assets/car.svg'
 import testTxt from './assets/test.txt'
 import jpg from './assets/11.jpg'
+import './style.css'
 
 //
 const getName = () => {
@@ -35,3 +36,6 @@ jpgTest.style.cssText = 'width: 160px; height: 100px;'
 jpgTest.src = jpg
 
 document.body.appendChild(jpgTest)
+
+// 添加css loader
+document.body.classList.add('bg')

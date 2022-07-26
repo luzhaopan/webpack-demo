@@ -60,6 +60,15 @@ module.exports = {
             // 生成资源名称
             filename: 'images/[name][ext]'
           }
+        },
+        {
+          test: /\.css$/i,
+          use: [
+            // 在 head 中创建 style 标签
+            'style-loader',
+            // 将 css 文件整合到 js 文件中
+            'css-loader'
+          ]
         }
     ]
   }
