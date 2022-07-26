@@ -1,12 +1,15 @@
 import src from './assets/22.png'
 import src2 from './assets/car.svg'
+import testTxt from './assets/test.txt'
 
+//
 const getName = () => {
     console.log('8888888！！')
 }
 
 getName()
 
+//
 const img = document.createElement('img')
 img.src = src
 
@@ -18,3 +21,9 @@ img2.style.height = '60px'
 img2.src = src2
 
 document.body.appendChild(img2)
+
+// 导入文本文件
+const block = document.createElement('div')
+block.style.cssText = 'width: 200px; height: 200px; background: #eee;'
+block.textContent = testTxt
+document.body.appendChild(block)

@@ -40,7 +40,11 @@ module.exports = {
         {
             test: /\.svg$/,
             type: 'asset/inline',  // 用于导出一个资源的data url
-        }
+        },
+        {
+          test: /\.txt$/,
+          type: 'asset/source',  // 用于导出资源的源代码
+      }
     ]
   }
 
