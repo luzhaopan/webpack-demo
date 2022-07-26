@@ -6,10 +6,13 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'), 
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    clean: true, // 打包之前清理之前dist文件
   },
 
-  mode: 'none',
+  mode: 'development', // 开发环境
+
+  devtool: 'inline-source-map', // 利于精准定位错误位置
 
   plugins: [
     new HtmlWebpackPlugin({
