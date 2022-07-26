@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: './src/index.js', // 配置入口
@@ -20,7 +21,11 @@ module.exports = {
         template: './index.html', // 以当前根目录下的index.html为模板
         filename: 'app.html', // 打包生成的文件名称
         inject: 'body' // 在body当中引入script
-    }) // 这将会生成一个包含以下内容的 dist/index.html 文件
+    }), // 这将会生成一个包含以下内容的 dist/index.html 文件
+    new MiniCssExtractPlugin({
+      // 对输出结果重命名
+      filename: 'styles/[contenthash].css'
+    })
   ], 
 
   // 安装webpack-dev-server,运行npx webpack-dev-server， 代码修改时时更新页面 
@@ -64,8 +69,8 @@ module.exports = {
         {
           test: /\.(css|less)$/i,
           use: [ // 顺序不能变
-            // 在 head 中创建 style 标签
-            'style-loader',
+            // 抽离 css 为独立文件
+            MiniCssExtractPlugin.loader,
             // 将 css 文件整合到 js 文件中
             'css-loader',
             'less-loader'
