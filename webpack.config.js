@@ -62,12 +62,13 @@ module.exports = {
           }
         },
         {
-          test: /\.css$/i,
-          use: [
+          test: /\.(css|less)$/i,
+          use: [ // 顺序不能变
             // 在 head 中创建 style 标签
             'style-loader',
             // 将 css 文件整合到 js 文件中
-            'css-loader'
+            'css-loader',
+            'less-loader'
           ]
         }
     ]

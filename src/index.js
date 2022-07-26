@@ -3,6 +3,7 @@ import src2 from './assets/car.svg'
 import testTxt from './assets/test.txt'
 import jpg from './assets/11.jpg'
 import './style.css'
+import './style.less'
 
 //
 const getName = () => {
