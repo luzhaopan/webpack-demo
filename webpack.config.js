@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'), 
     filename: 'bundle.js',
     clean: true, // 打包之前清理之前dist文件
+    assetModuleFilename: 'images/[contenthash][ext]' // 'images/test.png' // 打包图片到该文件夹中
   },
 
   mode: 'development', // 开发环境
@@ -26,5 +27,21 @@ module.exports = {
   devServer: {
     static: './dist'
   },
+
+  module: {
+    rules: [
+        {
+            test: /\.png$/,
+            type: 'asset/resource',  // 打包png图片
+            generator: {
+                filename: 'images/[contenthash][ext]' // 优先级高于 output 中的assetModuleFilename
+            }
+        },
+        {
+            test: /\.svg$/,
+            type: 'asset/inline',  // 用于导出一个资源的data url
+        }
+    ]
+  }
 
 };
