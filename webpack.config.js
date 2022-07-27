@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const TerserWebpackPlugin = require("terser-webpack-plugin")
 
 module.exports = (env) => {
   // console.log(env) // 可以取到 输入的命令行里的参数 npx webpack --env production --env goal=local
@@ -122,7 +123,9 @@ module.exports = (env) => {
     optimization: {
       minimizer: [
         // 使用插件优化 css 代码
-        new CssMinimizerPlugin()
+        new CssMinimizerPlugin(),
+        // 使用插件压缩 js 代码 (生产模式) npx webpack --env production
+        new TerserWebpackPlugin()
       ],
       
       splitChunks: { // 该配置可以去除重复引入
