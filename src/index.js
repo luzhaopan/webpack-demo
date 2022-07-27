@@ -7,6 +7,8 @@ import './style.less'
 import _ from 'lodash'
 import helloWorld from './hello-world'
 
+import './async-module.js'
+
 //
 const getName = () => {
     console.log('8888888！！')
