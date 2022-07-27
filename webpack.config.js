@@ -4,11 +4,28 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 
 module.exports = {
-  entry: './src/index.js', // 配置入口
-
+  // entry: { // 配置多入口, 导致重复引入
+  //   main: './src/index.js',
+  //   other: './src/other.js',
+  // },
+  // entry: { // 配置多入口,分离共享的内容，去除重复引入
+  //   main: {
+  //     import: './src/index.js',
+  //     dependOn: 'shared'
+  //   },
+  //   other: {
+  //     import: './src/other.js',
+  //     dependOn: 'shared'
+  //   },
+  //   shared: 'lodash'
+  // },
+  entry: { // 配置多入口, 使用插件sliptChunks去除重复引入
+    main: './src/index.js',
+    other: './src/other.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'), 
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     clean: true, // 打包之前清理之前dist文件
     assetModuleFilename: 'images/[contenthash][ext]' // 'images/test.png' // 打包图片到该文件夹中
   },
@@ -101,6 +118,10 @@ module.exports = {
       // 使用插件优化 css 代码
       new CssMinimizerPlugin()
     ],
+    
+    splitChunks: { // 该配置可以去除重复引入
+      chunks: 'all'
+    }
   },
 
 };

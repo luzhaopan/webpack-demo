@@ -4,7 +4,7 @@ import testTxt from './assets/test.txt'
 import jpg from './assets/11.jpg'
 import './style.css'
 import './style.less'
-
+import _ from 'lodash'
 import helloWorld from './hello-world'
 
 //
@@ -46,3 +46,7 @@ document.body.classList.add('bg')
 
 // helloWorld
 helloWorld()
+
+
+
+console.log(_.join(['77','88', '99'], '-'))
