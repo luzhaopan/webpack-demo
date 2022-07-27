@@ -123,7 +123,14 @@ module.exports = {
     ],
     
     splitChunks: { // 该配置可以去除重复引入
-      chunks: 'all'
+      // chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/, // 提取node_modules文件夹中的文件，比如缓存lodash
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
     }
   },
 
