@@ -30,7 +30,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'), 
     filename: 'scripts/[name].[contenthash].js', // contenthash根据文件名生成一个hash文件，避免缓存
     clean: true, // 打包之前清理之前dist文件
-    assetModuleFilename: 'images/[contenthash][ext]' // 'images/test.png' // 打包图片到该文件夹中
+    assetModuleFilename: 'images/[contenthash][ext]', // 'images/test.png' // 打包图片到该文件夹中
+    publicPath: 'http://localhost:8080/' // 配置引入资源的公共路径
   },
 
   // mode: 'production', // 生产环境
