@@ -8,6 +8,23 @@ module.exports = {
   mode: 'development', // 开发环境
 
   devtool: 'inline-source-map', // 利于精准定位错误位置
+  // 常用的几种 source-map 类型:
+  // source-map：生成外部文件，错误代码的准确信息和源代码的错误位置
+  // inline-source-map：内联，错误代码的准确信息和源代码的错误位置。在代码底部生成，构建速度比外部文件更快
+  // hidden-source-map：生成外部文件，错误代码的原因，没有错误位置，无法追踪源代码错误。
+  // eval-source-map：内联，错误代码的准确信息和源代码的错误位置。每一个文件都生成对应的 source-map
+  // nosources-source-map：生成外部文件，
+  // cheap-source-map：生成外部文件，错误代码的准确信息和源代码的错误位置。只精确到行
+  // cheap-module-source-map：同 cheap-source-map，会将 loader 的 source map 加入
+
+  // 开发环境建议
+  // eval-source-map
+  // eval-cheap-module-source-map
+  
+  // 生产环境建议
+  // source-map
+  // nosources-source-map
+  // hidden-source-map
 
   // 安装webpack-dev-server,运行npx webpack-dev-server， 代码修改时时更新页面 
   devServer: {
