@@ -5,6 +5,8 @@ import jpg from './assets/11.jpg'
 import './style.css'
 import './style.less'
 
+import helloWorld from './hello-world'
+
 //
 const getName = () => {
     console.log('8888888！！')
@@ -41,3 +43,6 @@ document.body.appendChild(jpgTest)
 
 // 添加css loader
 document.body.classList.add('bg')
+
+// helloWorld
+helloWorld()

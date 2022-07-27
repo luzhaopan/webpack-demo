@@ -13,7 +13,8 @@ module.exports = {
     assetModuleFilename: 'images/[contenthash][ext]' // 'images/test.png' // 打包图片到该文件夹中
   },
 
-  mode: 'production', // 生产环境
+  // mode: 'production', // 生产环境
+  mode: 'development', // 开发环境
 
   devtool: 'inline-source-map', // 利于精准定位错误位置
 
@@ -76,7 +77,22 @@ module.exports = {
             'css-loader',
             'less-loader'
           ]
-        }
+        },
+        {
+          test: /\.m?js$/,
+          // 排除 node_modules 中安装的库
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            // 加载 loader
+            loader: 'babel-loader',
+            options: {
+              // 配置预设
+              presets: ['@babel/preset-env']
+            }
+          }
+        } // babel-loader： 在 webpack 里应用 babel 解析 ES6 的桥梁
+          // @babel/core： babel 核心模块
+          // @babel/preset-env： babel 预设，一组 babel 插件的集合
     ]
   },
 
