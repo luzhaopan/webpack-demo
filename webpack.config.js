@@ -28,7 +28,7 @@ module.exports = {
   // },
   output: {
     path: path.resolve(__dirname, 'dist'), 
-    filename: '[name].[contenthash].js', // contenthash根据文件名生成一个hash文件，避免缓存
+    filename: 'scripts/[name].[contenthash].js', // contenthash根据文件名生成一个hash文件，避免缓存
     clean: true, // 打包之前清理之前dist文件
     assetModuleFilename: 'images/[contenthash][ext]' // 'images/test.png' // 打包图片到该文件夹中
   },
