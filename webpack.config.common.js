@@ -19,8 +19,8 @@ module.exports = {
   //   shared: 'lodash'
   // },
   entry: { // 2、配置多入口, 使用插件sliptChunks去除重复引入
-    main: './src/index.js',
-    other: './src/other.js',
+    main: './src/app.ts',
+    // other: './src/other.js',
   },
   // entry: {
   //   main: './src/index.js',
@@ -35,7 +35,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, './src'), // 别名
     },
-    extensions: ['.js', '.json', '.vue'], // 相同文件名时，优先执行的扩展名文件，eg: math.js math.vue 相同文件名, 引用math时优先执行以.js扩展名的文件
+    extensions: ['.ts', '.js', '.json', '.vue'], // 相同文件名时，优先执行的扩展名文件，eg: math.js math.vue 相同文件名, 引用math时优先执行以.js扩展名的文件
   },
 
   plugins: [
@@ -108,6 +108,11 @@ module.exports = {
       }, // babel-loader： 在 webpack 里应用 babel 解析 ES6 的桥梁
       // @babel/core： babel 核心模块
       // @babel/preset-env： babel 预设，一组 babel 插件的集合
+      {
+        test: /\.ts$/i,
+        use: 'ts-loader',
+        exclude: /(node_modules|bower_components)/,
+      },
     ],
   },
 

@@ -8,3 +8,8 @@ npx webpack
 
 npm install eslint -D 
 npx eslint --init
+
+
+# ts 引入
+npm i typescript ts-loader -D
+npx tsc --init

@@ -5,9 +5,6 @@ import testTxt from './assets/test.txt';
 import jpg from './assets/11.jpg';
 import './style.css';
 import './style.less';
-import helloWorld from './hello-world';
-
-import './async-module';
 
 //
 const getName = () => {
@@ -45,8 +42,5 @@ document.body.appendChild(jpgTest);
 
 // 添加css loader
 document.body.classList.add('bg');
-
-// helloWorld
-helloWorld();
 
 console.log(_.join(['77', '88', '99'], '-'));

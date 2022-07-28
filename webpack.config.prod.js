@@ -1,5 +1,5 @@
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
+// const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
 
@@ -15,7 +15,7 @@ module.exports = {
       // 使用插件优化 css 代码
       new CssMinimizerPlugin(),
       // 使用插件压缩 js 代码 (生产模式) npx webpack --env production
-      new TerserWebpackPlugin(),
+      // new TerserWebpackPlugin(),
     ],
 
   },
