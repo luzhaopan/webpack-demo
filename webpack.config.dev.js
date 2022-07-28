@@ -1,6 +1,5 @@
-const { access } = require('fs');
-const path = require('path');
-// 
+// const path = require('path');
+//
 module.exports = {
   output: {
     filename: 'scripts/[name].js', // contenthash根据文件名生成一个hash文件，避免缓存
@@ -21,13 +20,13 @@ module.exports = {
   // 开发环境建议
   // eval-source-map
   // eval-cheap-module-source-map
-  
+
   // 生产环境建议
   // source-map
   // nosources-source-map
   // hidden-source-map
 
-  // 安装webpack-dev-server,运行npx webpack-dev-server， 代码修改时时更新页面 
+  // 安装webpack-dev-server,运行npx webpack-dev-server， 代码修改时时更新页面
   devServer: {
     static: './dist',
     // static: path.resolve(__dirname, './dist'),
@@ -43,7 +42,7 @@ module.exports = {
     // https: true, // 将本地http服务变成https
     // http2: true // http2自带https自签名证书
     hot: true, // 模块热替换
-    
+
     liveReload: true, // 启用热加载功能
-  }
+  },
 };

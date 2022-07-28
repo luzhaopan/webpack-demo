@@ -1,3 +1,3 @@
-import _ from 'lodash'
+import _ from 'lodash';
 
-console.log(_.join(['11','33', '66'], '-'))
+console.log(_.join(['11', '33', '66'], '-'));
