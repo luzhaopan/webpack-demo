@@ -38,7 +38,7 @@ document.body.appendChild(block)
 
 // 设置通用资源类型asset，
 const jpgTest = document.createElement('img')
-jpgTest.style.cssText = 'width: 160px; height: 100px;'
+jpgTest.style.cssText = 'width: 180px; height: 100px;'
 jpgTest.src = jpg
 
 document.body.appendChild(jpgTest)

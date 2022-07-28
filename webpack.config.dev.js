@@ -29,9 +29,9 @@ module.exports = {
 
   // 安装webpack-dev-server,运行npx webpack-dev-server， 代码修改时时更新页面 
   devServer: {
-    // static: './dist'
-    static: path.resolve(__dirname, './dist'),
-    // compress: true, // 浏览器传输时进行压缩
+    static: './dist',
+    // static: path.resolve(__dirname, './dist'),
+    // compress: true, // 浏览器传输时进行压缩， 设置 gzip 压缩，提高传输效率
     // port: 3000, // 设定端口
     // host: '0.0.0.0', // 方便其他人访问我的服务
     // headers: {
@@ -42,5 +42,8 @@ module.exports = {
     // },
     // https: true, // 将本地http服务变成https
     // http2: true // http2自带https自签名证书
+    hot: true, // 模块热替换
+    
+    liveReload: true, // 启用热加载功能
   }
 };
