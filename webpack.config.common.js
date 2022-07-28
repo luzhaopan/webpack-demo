@@ -31,6 +31,13 @@ module.exports = {
     assetModuleFilename: 'images/[contenthash][ext]', // 'images/test.png' // 打包图片到该文件夹中
   },
 
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'), // 别名
+    },
+    extensions: ['.js', '.json', '.vue'], // 相同文件名时，优先执行的扩展名文件，eg: math.js math.vue 相同文件名, 引用math时优先执行以.js扩展名的文件
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html', // 以当前根目录下的index.html为模板
